@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: larger;
+        }
+
+        .text-block {
+            padding: 4rem;
+            margin: 0 10rem;
+        }
+
+        iframe {
+            z-index: 0;
+            border: none;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+
+        /* Scrollama style */
+
+        .scrolly {
+            position: relative;
+            padding: 0.1px;
+        }
+
+        .figure__full {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .figure__semifull {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 20%;
+            height: 100vh;
+            width: 80vw;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article__center {
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+        }
+
+        .article__left{
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            right: 20%;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+
+        }
+
+        .article__right{
+            position: relative;
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            left: 20%;
+            z-index: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+
+        }
+
+        .step {
+            margin: 40rem auto;
+            background: rgba(255, 255, 255, 0.9) ;
+            padding: 1.25em;
+            border-radius: 10px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px;
+            color: black;
+            z-index: 1;
+
+        }
+
+        /* Images */
+        .image__full {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
+        .image__center {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            max-height: 100vh;
+            max-width: 100vw;
+            padding: 2rem;
+        }
+
+        /* Media queries */
+        
+        @media screen and (max-width: 600px) {
+            .figure__full {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .figure__semifull {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .article__center {
+                max-width: 20rem;
+                margin: 0 auto;
+            }
+
+            .article__left{
+                max-width: 20rem;
+                margin: 0 auto;
+                right: 0;
+            }
+
+            .article__right{
+                max-width: 20rem;
+                margin: 0 auto;
+                left: 0;
+            }
+
+            .step {
+                margin: 40rem auto;
+            }
+        }
+        #intro-fig {
+            position: relative;
+        }
+
+        #cinta {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            z-index: 2;
+            color: white;
+            padding: 1rem;
+        }
+        #intro-video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1; 
+        }
+    </style>
+    <script src="https://unpkg.com/scrollama"></script>
+</head>
+
+<body>
+    <main>
+
+        <section id="intro" class="scrolly">
+            <figure id="intro-fig" class="figure__full">
+                <div class="overlay"></div>
+                <video autoplay muted loop playsinline poster="" id="intro-video">
+                    <source src="img/introvideo.mp4" type="video/mp4">
+                </video>
+            </figure>
+            <div id="cinta">
+                <div style="margin: 2rem 1rem">
+                    <h1 style="text-align:center;font-size:40px;">Fundamentos morales en Cochabamba</h1>
+                    <p><h3 style="text-align:center">Javier Alberto Olmos Aguilar</h3></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/2y3.jpg" class="image__full">
+            </figure>
+            <article class="article__left">
+                <div class="step" data-step="1">
+                    <p>Una joven ambientalista Sofía, que vivía en Cochabamba, se enfrentaba a una difícil decisión.</p>
+                    <p>Debía elegir entre aceptar un trabajo bien remunerado que involucraba trabajar para una empresa que daña el medio ambiente, o aceptar un trabajo menos pagado pero que estaba en línea con sus valores ambientales.</p>
+                    <p>¿Qué debería elegir? ¿Qué le dirías a Sofía?</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Puede que nos encontremos en situaciones de este tipo y nuestras respuestas pueden variar, tal vez sugerirías a Sofía que se mantenga firme en sus convicciones a favor del medio ambiente.</p>
+                    <p>¿Qué nos hace escoger una cosa u otra?</p>                
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/4.jpg" class="image__full">
+            </figure>
+            <article class="article__right">
+                <div class="step" data-step="1">
+                    <h3>Teoría de Fundamentos Morales</h3></br>
+                    <p>Es una teoría que combina el enfoque universalista de la psicología evolutiva y el enfoque particularista de la antropología cultural. Trata de explicar cómo funciona la moralidad y cómo varía de una cultura a otra.</p>
+                    <p>La teoría parte de entender que nuestra intuición viene primero, el razonamiento estratégico después.</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>Nuestros instintos impulsan nuestro razonamiento estratégico.</br>Esto hace que sea difícil conectarse con aquellos que viven y crecieron en bases morales diferentes.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/5.jpg" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>La moralidad es mucho más que justo e injusto, las sociedades humanas son complejas y sus necesidades y desafíos varían. Somos egoístas y grupales.</p>
+                    <p>La moralidad une y ciega. Nos une a equipos ideológicos que luchan entre sí. Nos ciega al hecho de que cada equipo también tiene personas que tienen algo importante que decir.</p>
+                    <p>Esta teoría entiende la moralidad por lo que hace, en lugar de especificar qué contenido cuenta como moral.</p>
+                    <p>La teoría se utiliza principalmente para comprender cómo se forman los juicios y valores morales de las personas y cómo varían entre culturas e ideologías políticas.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/6.jpg" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Además, está basada en cuatro afirmaciones sobre la moralidad humana:</p>
+                    <h4>1. Nativismo:</h4><p>considera que la moralidad humana está hasta cierto punto organizada antes de la experiencia</p>
+                    <h4>2. Aprendizaje cultural:</h4><p>se va modificando durante el desarrollo y en un contexto cultural.</p>
+                    <h4>3. Intuicionismo:</h4><p>las intuiciones vienen primero y luego se racionalizan conscientemente.</p>
+                    <h4>4. Pluralismo:</h4><p>en nuestra historia evolutiva pasamos por muchos desafíos en nuestra cooperación y vida social por lo que hay varios fundamentos de la intuición moral.</p>
+                    <p>Se trata de un marco para comprender las bases psicológicas y sociales de la moralidad y cómo ésta moldea el comportamiento humano y la toma de decisiones en diferentes contextos.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/7.jpg" class="image__full">
+            </figure>
+            <article class="article__right">
+                <div class="step" data-step="1">
+                    <p>En un inicio se propusieron 5 fundamentos morales, Cuidado, Justicia, Lealtad, Autoridad y Pureza. Aunque recientemente se decidió dividir Justicia en “Igualdad” y “Proporcionalidad” para mejorar su comprensión.</p>
+                    <h4>¿Pero qué son los seis fundamentos morales?</h4>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly" data-flourishid="1870108">
+            <figure class="figure__full">
+                <iframe scrolling="no" src="https://flo.uri.sh/story/1870108/embed#slide-0" class="image__full"></iframe>
+            </figure>
+        </section>
+
+        <section class="scrolly" data-flourishid="1870111">
+            <figure class="figure__full">
+                <iframe scrolling="no" src="https://flo.uri.sh/story/1870111/embed#slide-0" class="image__full"></iframe>
+            </figure>
+
+            <article class="article__center">
+                <div class="step" data-step="0">
+                    <p>En nuestra encuesta mixta, en línea y presencial, a 314 personas que viven en el municipio de Cochabamba entre 18 a 74 años, 156 mujeres y 158 hombres.</p>
+                    <p>Encontramos los siguientes resultados:</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly" data-flourishid="1870115">
+            <figure class="figure__semifull">
+                <iframe scrolling="no" src="https://flo.uri.sh/story/1870115/embed#slide-0" class="image__full"></iframe>
+            </figure>
+
+            <article class="article__right">
+                <div class="step" data-step="0">
+                    <p>No encontramos grandes diferencias entre las distintas orientaciones de la población. El valor de la igualdad es bajo en general y más bajo en la derecha</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly" data-flourishid="1870119">
+            <figure class="figure__semifull">
+                <iframe scrolling="no" src="https://flo.uri.sh/story/1870119/embed#slide-0" class="image__full"></iframe>
+            </figure>
+
+            <article class="article__center">
+                <div class="step" data-step="0">
+                    <p>No hay grandes diferencias entre sexos, solo una mayor inclinación hacia el cuidado en las mujeres</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/14.jpg" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Esto nos dice que podemos estar de acuerdo con causar algún daño o renunciar a un bien en pos de lograr un bien moral de mayor valor.</br>Nos preocupamos por los demás en especial por quienes sufren daños.</br>Respetamos a las figuras de autoridad, las estructuras jerárquicas y defendemos las tradiciones.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/15.jpg" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Entonces podemos tener diferentes puntajes individuales, valoramos muchas cosas diferentes que tienen que ver en parte con elementos de nuestra evolución como especie, que se van modificando en nuestro desarrollo y en el contexto cultural en el que crecemos.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="scrolly">
+            <figure class="figure__full">
+                <img src="img/16.jpg" class="image__full">
+            </figure>
+            <article class="article__center">
+                <div class="step" data-step="1">
+                    <p>Por ende, hay una diversidad moral pero no significa que caigamos en el relativismo de decir: “cada quien con sus propios valores y hay que respetarlos” sin integrarlos o solaparlos.</p>
+                    <p>Al contrario, lo importante es reconocer su pluralismo “Si para mí un valor no es relevante, pero para otro sí lo es, soy capaz de entender por qué lo hace o qué lo llevaría a hacerlo”. 
+                    <p>Esto nos conduce a comprendernos los unos a los otros.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="intro" class="scrolly">
+            <figure id="intro-fig" class="figure__full">
+                <div class="overlay"></div>
+                <video autoplay muted loop playsinline poster="" id="intro-video">
+                    <source src="img/finalvideo2.mp4" type="video/mp4">
+                </video>
+            </figure>
+            </div>
+        </section>
+
+        <section class="scrolly text-block">
+            <article>
+                <h1>Subtitulo</h1>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt provident impedit, expedita quidem dolorem ducimus accusamus dolore quaerat quasi officia quos porro ex minima repellendus rerum vitae quisquam vel voluptatem.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <script>
+        const scroller = scrollama();
+
+        function handleStepEnter(response) {
+            const { element, index, direction } = response;
+            if (element.dataset.step) {
+                const id = element.parentElement.parentElement.dataset.flourishid;
+                const link = `https://flo.uri.sh/story/${id}/embed#slide-`;
+                const slide = element.dataset.step;
+                document.querySelector(`section[data-flourishid="${id}"] iframe`)
+                    .setAttribute('src', link + slide);
+            }
+        }
+
+        function handleStepExit(response) {
+            const { element, index, direction } = response;
+        }
+
+        function init() {
+            scroller
+                .setup({
+                    step: ".step",
+                    offset: 0.5,
+                    debug: false
+                }).onStepEnter(handleStepEnter)
+                .onStepExit(handleStepExit);
+
+            window.addEventListener("resize", scroller.resize);
+        }
+        init();
+
+    </script>
+</body>
+
+</html>
